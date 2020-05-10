@@ -1,0 +1,93 @@
+/* Styling our calculator by setting the font of our bottons*/
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-weight: normal;
+}
+/* Creating the background parameters of our webpage, we use a linear-gradient of light blue to purple to make it look appealing*/
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, #159DCF, #1531CF);
+}
+/* Setting the layout of our calculator buttons*/
+.calculator-grid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+   
+}
+/* Setting the style of our calculator buttons by adding a white background and border*/
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255,255,255, .75);
+
+}
+/* This allows the buttons to light up to a light color when a mouse hovers over*/
+.calculator-grid > button:hover {
+    background-color: rgba(255,255,255, .9);
+
+}
+/* Setting our equal sign to a green colour. Span 2 means that the buttons will take up 2 individual button spaces*/
+/* this is why we created an individual class for the equal button, the same is done for .clear and the 4 operators ( + - / and *)*/
+.calculator-grid .equal{
+    grid-column: span 2;
+    background-color: lightgreen;
+    color: black;
+}
+
+.calculator-grid .clear{
+    grid-column: span 2;
+    color: red;
+}
+/* Setting up the size and properties of our display grid*/
+.output{
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+/* Setting up the properties of the previous operand text*/
+.output .previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+/* Setting up the properties of the current operand text*/
+.output .current-operand {
+    color: rgb(255, 255, 255);
+    font-size: 2.5rem;
+}
+/* Setting a colour for our operator buttons for easier viewing*/
+.calculator-grid .add {
+    background-color: deepskyblue;
+    color: black;
+}
+
+.calculator-grid .subtract {
+    background-color: deepskyblue;
+    color: black;
+
+}
+
+.calculator-grid .multiply {
+    background-color: deepskyblue;
+    color: black;
+
+}
+
+.calculator-grid .divide {
+    background-color: deepskyblue;
+    color: black;
+
+}
