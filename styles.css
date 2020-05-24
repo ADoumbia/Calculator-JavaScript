@@ -16,7 +16,7 @@ body {
     justify-content: center;
     align-content: center;
     min-height: 100vh;
-    grid-template-columns: repeat(4, 100px);
+    grid-template-columns: repeat(6, 100px);
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
    
 }
@@ -37,7 +37,7 @@ body {
 /* Setting our equal sign to a green colour. Span 2 means that the buttons will take up 2 individual button spaces*/
 /* this is why we created an individual class for the equal button, the same is done for .clear and the 4 operators ( + - / and *)*/
 .calculator-grid .equal{
-    grid-column: span 2;
+    grid-column: span 3;
     background-color: lightgreen;
     color: black;
 }
@@ -91,3 +91,51 @@ body {
     color: black;
 
 }
+.calculator-grid .pi {
+    background-color: rgba(226, 73, 73, 0.979);
+    color: black;
+
+}
+
+.calculator-grid .exponent {
+    background-color: rgba(226, 73, 73, 0.979);
+    color: black;
+
+}
+
+.calculator-grid .negative {
+    background-color: rgba(226, 73, 73, 0.979);
+    color: black;
+
+}
+
+.calculator-grid .root {
+    background-color: rgba(226, 73, 73, 0.979);
+    color: black;
+
+}
+
+.calculator-grid .sin {
+    background-color: rgb(243, 243, 70);
+    color: black;
+
+}
+
+.calculator-grid .cos {
+    background-color: rgb(243, 243, 70);
+    color: black;
+
+}
+
+.calculator-grid .tan {
+    background-color: rgb(243, 243, 70);
+    color: black;
+
+}
+
+.calculator-grid .ln {
+    background-color: rgb(243, 243, 70);
+    color: black;
+
+}
+

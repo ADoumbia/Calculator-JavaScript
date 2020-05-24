@@ -16,6 +16,48 @@ class Calculator{
         this.currentOperand = this.currentOperand.toString().slice(0, -1)
 
     }
+    pi(){
+        var π = parseFloat(Math.PI.toString()).toFixed(8)
+        this.currentOperand = π
+    }
+
+    percent(){
+        if (isNaN(this.currentOperand)) return
+        this.currentOperand = this.currentOperand/100
+    }
+
+    negative(){
+        if (isNaN(this.currentOperand)) return
+        this.currentOperand = -(this.currentOperand)
+    }
+
+    sin(){
+        if (isNaN(this.currentOperand)) return
+        this.currentOperand = Math.sin(this.currentOperand)
+    }
+
+    cos(){
+        if (isNaN(this.currentOperand)) return
+        this.currentOperand = Math.cos(this.currentOperand)
+    }
+
+    tan(){
+        if (isNaN(this.currentOperand)) return
+        this.currentOperand = Math.tan(this.currentOperand)
+    }
+
+    root(){
+        if (isNaN(this.currentOperand)) return
+        this.currentOperand = Math.sqrt(this.currentOperand)
+    }
+
+    ln(){
+        if (isNaN(this.currentOperand)) return
+        this.currentOperand = Math.log(this.currentOperand)
+    }
+
+
+
 //The appendNumber function/method otherwise known as the add number function will pass a number and will add the operand and the number in a String format
 //this is important because if we just added the operand and the number we would get 1 + 1 = 11 instead of 2
     appendNumber(number){
@@ -54,6 +96,9 @@ class Calculator{
             break
         case '÷':
             computation = prev / current
+            break
+        case 'EXP':
+            computation = Math.pow(prev, current)
             break
         default: 
             return
@@ -102,6 +147,14 @@ const deleteButton = document.querySelector('[data-delete]')
 const clearAllButton = document.querySelector('[data-clear-all]')
 const previousOperandTextElement = document.querySelector('[data-previous-operand]')
 const currentOperandTextElement = document.querySelector('[data-current-operand]')
+const piButton = document.querySelector('[data-pi]')
+const percentButton = document.querySelector('[data-percent]')
+const negativeButton = document.querySelector('[data-negative]')
+const sinButton = document.querySelector('[data-sin]')
+const cosButton = document.querySelector('[data-cos]')
+const tanButton = document.querySelector('[data-tan]')
+const rootButton = document.querySelector('[data-root]')
+const lnButton = document.querySelector('[data-ln]')
 
 //Creating our calculator to attach the buttons
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
@@ -134,4 +187,52 @@ clearAllButton.addEventListener('click', button => {
 deleteButton.addEventListener('click', button => {
     calculator.delete()
     calculator.updateDisplay()
+})
+
+piButton.addEventListener('click', button => {
+    calculator.pi()
+    calculator.updateDisplay()
+   
+})
+
+percentButton.addEventListener('click', button => {
+    calculator.percent()
+    calculator.updateDisplay()
+   
+})
+
+negativeButton.addEventListener('click', button => {
+    calculator.negative()
+    calculator.updateDisplay()
+   
+})
+
+sinButton.addEventListener('click', button => {
+    calculator.sin().toString
+    calculator.updateDisplay()
+   
+})
+
+cosButton.addEventListener('click', button => {
+    calculator.cos()
+    calculator.updateDisplay()
+   
+})
+
+tanButton.addEventListener('click', button => {
+    calculator.tan()
+    calculator.updateDisplay()
+   
+})
+
+rootButton.addEventListener('click', button => {
+    calculator.root()
+    calculator.updateDisplay()
+   
+})
+
+lnButton.addEventListener('click', button => {
+    calculator.ln()
+    calculator.updateDisplay()
+   
 })
